@@ -9,13 +9,25 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, Michal!")
+        ZStack {
+            Image("Vortex")
+                .resizable()
+                .offset(x: 400, y: 400)
+                .frame(width: 2000, height: 2000)
+                .clipped()
+                .opacity(0.5)
+            
+            Image("Ticket")
+                .resizable()
+                .frame(width: 800, height: 800)
+                .clipped()
+                .offset(x: 280, y: 250)
+                .rotationEffect(.degrees(20))
+                .blur(radius: 24)
         }
-        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(16)
+        .background(Color("Background"))
     }
 }
 

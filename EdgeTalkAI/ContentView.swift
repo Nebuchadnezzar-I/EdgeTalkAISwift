@@ -16,7 +16,7 @@ struct ContentView: View {
                 .frame(width: 2000, height: 2000)
                 .clipped()
                 .opacity(0.5)
-            
+
             Image("Ticket")
                 .resizable()
                 .frame(width: 800, height: 800)
@@ -24,13 +24,20 @@ struct ContentView: View {
                 .offset(x: 280, y: 250)
                 .rotationEffect(.degrees(20))
                 .blur(radius: 24)
+            
+            VStack {
+                PageHandlerView()
+                NavHandlerView( )
+            }
+            .frame(maxWidth: UIScreen.main.bounds.width - 16, maxHeight: UIScreen.main.bounds.height - 100)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .padding(16)
         .background(Color("Background"))
+        .padding()
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(AppState())
 }
